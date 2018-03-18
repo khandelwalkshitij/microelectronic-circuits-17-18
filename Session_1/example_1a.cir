@@ -1,0 +1,8 @@
+example-1.a A simple resistive circuit 
+V1 1 0 5
+R1 1 2 2K
+R2 2 3 2K
+R3 2 0 2.5K
+R4 3 0 2.5K
+.op
+.END

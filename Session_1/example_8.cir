@@ -1,0 +1,25 @@
+CE AMPLIFIER BASED ON BC107 EXAMPLE-8
+* ADDING MODEL FILE FOR BJT
+*
+.model BC107A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=116.3 Bf=375.5 Ise=7.049f
++               Ne=1.281 Ikf=4.589 Nk=.5 Xtb=1.5 Br=2.611 Isc=121.7p Nc=1.865
++               Ikr=5.313 Rc=1.464 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2717 Vje=.5 Tr=10n Tf=451p Itf=6.194 Xtf=17.43 Vtf=10)
+*
+*------------NETLIST BEGINS HERE ---------------------*
+VCC 3 0 15
+RC 3 4 4.7K
+Q1 4 2 5 BC107A
+RE 5 0   1.2K
+CE 5 0   100U
+R1 3 2   100K
+R2 2 0   10K
+C1 1 2   6U
+cload 4 6  100u
+rload 6 0  10k
+VIN 1 0 AC SIN(0 5M 1K)
+*----------------------- ANALYSIS BEGINS HERE ----------------*
+.OP
+.AC DEC 5 1 100MEG
+*.TRAN 0.1M 5M
+.END

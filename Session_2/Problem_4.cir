@@ -1,0 +1,13 @@
+******Problem_4******
+.MODEL MY_NMOS NMOS KP=100E-006 LEVEL=1 VT0=0.7 LAMBDA=0.1
+.MODEL MY_PMOS PMOS KP=50E-006 LEVEL=1 VT0=-0.7 LAMBDA=0.1
+******Circuit Definition**************
+VDD 4 0 3.3
+RD 4 3 2k
+M1 3 2 1 1 MY_NMOS L=1E-006 W=4E-006
+Vin 2 0 dc 1.5
+Rs 1 0 1k
+********Analysis Statements**********
+.dc Vin 0 3.3 0.3
+*.tf v(1) Vin
+.end

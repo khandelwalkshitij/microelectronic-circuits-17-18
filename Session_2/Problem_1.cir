@@ -1,0 +1,49 @@
+CASCODE AMPLIFIER CIRCUIT
+
+*** 1.2um techbology level=3 MODEL file ****
+.MODEL CMOSN  NMOS LEVEL=3 PHI=0.600000 TOX=2.1200E-08 XJ=0.200000U
++TPG=1 VTO=0.7860 DELTA=6.9670E-01 LD=1.6470E-07 KP=9.6379E-05
++UO=591.7 THETA=8.1220E-02 RSH=8.5450E+01 GAMMA=0.5863
++NSUB=2.7470E+16 NFS=1.98E+12 VMAX=1.7330E+05 ETA=4.3680E-02
++KAPPA=1.3960E-01 CGDO=4.0241E-10 CGSO=4.0241E-10
++CGBO=3.6144E-10 CJ=3.8541E-04 MJ=1.1854 CJSW=1.3940E-10
++MJSW=0.125195 PB=0.800000
+
+*----------------NETLIST BEGINS HERE------------------
+VCC 4 0 3.3V
+*Vcc is 3.3 volts, applied between terminals 4 and 0.
+M1 2 1 0 0 CMOSN L= 1.2U W= 40U
+*The order of terminals for a NMOS is D-G-S-B. This is the input (CSA) part of the Cascode.
+M2 3 5 2 0 CMOSN L= 1.2U W= 40U
+*This is the CGA part of the Cascode, terminal 5 is bias voltage. Base is connected to Ground.
+RD 4 3 1MEG
+VBIAS 5 0 1.8V
+*Vbias is 2 volts
+VIN 1 0 AC sine(.6V 1mV 1K 0 0 0)
+*VIN is Input Voltage. The terms in the sinusoid are as follows:
+* 1V = DC Bias Voltage for the Input
+* 10mV = Amplitude of the AC Component of the Input
+* 1K = Frequency of the AC Input
+* 0 (The first one) = Deay in the pulse
+* 0 (The second one) = Exponential Damping
+* 0 (The third one) = Phase
+
+*---------------ANALYSIS BEGINS HERE------------------
+.OP
+.AC DEC 5 1 100MEG
+*The .AC Statement is used for AC analysis. This analysis is done with frequency as the scale on X-axis. The terms are as follows:
+* DEC = Decade, the scale is logarithmic scale. Other possible scales are linear, octave, etc.
+* 5 = The number of intervals in every decade
+* 1 = Starting Frequency, 1Hz.
+* 100 MEG = Ending Frequency, 100 MHz
+* Remark: The AC Sweep overrides the prior mentioned value for frequency of Vin (1KHz) and sweeps it from 1Hz to 1MHz.
+
+*.DC VIN 0 4 0.1
+
+*.TRAN 0.1M 5M
+*.TF
+*Gives us the transfer function.
+.END
+
+
+

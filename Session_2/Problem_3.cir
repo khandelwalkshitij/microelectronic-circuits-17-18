@@ -1,0 +1,22 @@
+******Problem_3******
+
+***********Model definitions***********************
+.MODEL MY_NMOS NMOS level=1 lambda=0.1 vt0=0.7 kp=100e-006
+.MODEL MY_PMOS PMOS level=1 lambda=0.1 vt0=-0.7 kp=100e-006
+***********Definition of circuit******************
+
+VDD 5 0 3.3
+rd1 5 4 1meg
+rs1 2 1 10k
+M1 4 3 2 2 MY_NMOS L=10u W=wl
+Vin 1 0 ac sin(0.73 100m 1k)
+vbias 3 0 1.5
+.param wl=100u
+.step param wl 1u 1000u 20u
+
+*********Analysis statement************************
+.op
+
+*.dc vin 0 3.3 0.1
+.ac dec 10 1 10k
+.end

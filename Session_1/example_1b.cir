@@ -1,0 +1,16 @@
+example-1.B A resistive circuit
+V1 1 0 3
+R1 1 2 3.3K
+R2 2 3 3.3k
+R3 2 4 3.3k
+I1 4 8 20M
+R4 4 5 3.3K
+V2 5 6 5V
+R5 6 7 3.3K
+R6 7 0 3.3K
+R7 6 8 3.3K
+R8 8 0 3.3K
+R9 2 8 3.3K
+.OP
+.TF V(2,8) V1
+.END
