@@ -39,8 +39,9 @@ VIN 1 0 AC sine(.6V 1mV 1K 0 0 0)
 * Remark: The AC Sweep overrides the prior mentioned value for frequency of Vin (1KHz) and sweeps it from 1Hz to 1MHz.
 
 *.DC VIN 0 4 0.1
-
+*Uncomment the above line for DC analysis.
 *.TRAN 0.1M 5M
+*Uncomment the above line for transient (time based) analysis.
 *.TF
 *Gives us the transfer function.
 .END
