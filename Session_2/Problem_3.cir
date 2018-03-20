@@ -8,7 +8,7 @@
 VDD 5 0 3.3
 rd1 5 4 1meg
 rs1 2 1 10k
-M1 4 3 2 2 MY_NMOS L=10u W=wl
+M1 4 3 2 0 MY_NMOS L=10u W=wl
 Vin 1 0 ac sin(0.73 100m 1k)
 vbias 3 0 1.5
 .param wl=100u
