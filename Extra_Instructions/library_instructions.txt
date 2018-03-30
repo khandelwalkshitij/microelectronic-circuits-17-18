@@ -1,0 +1,22 @@
+
+Till now, you have been including all the .MODEL declaration
+in the netlist itself. This tends to make your code lengthy
+and difficult to read. A good coding pracice is to write all
+the model declarations in a separate library file and 'include'
+it in your netlist. This is similar to the #include statement in
+C but the syntax is a bit different.
+
+STEPS:
+1) Copy all the .model declaration into a separate text file.
+2) Save this text file with a .lib extension in any folder whose
+   path is easy to  write. For example, D:\myLib.lib
+3) Go to your netlist, remove all the .model declaration and replace it
+   with this:
+	.lib D:\myLib.lib
+4) Save and run your netlist.
+
+Note: It will be compulsory to do so in exam, so it is advised that you 
+      practice it with one of the netlists you have already written. We 
+      are providing a modified version of example_6.cir taught to you
+      in the first session. Have a look at it.
+
