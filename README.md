@@ -10,3 +10,27 @@
 
 
 It is also suggested that you keep checking this repository for problems, resources, etc. Notices for the same shall be put on Nalanda.
+
+###### Explaination for Gain Margin and Phase Margin
+
+Gain margin and phase margin are two parameters to assess the performance of a circuit. Depending on the values of both, we judge factors such as the stability of the circuit etc. 
+
+####### Gain Margin: 
+The value of the gain at the same frequency where the phase crosses -180° is called as the gain margin of the circuit. The frequency at which the phase crosses -180° is called  phase crossover frequency. Hence, the value of the gain at the phase crossover frequency is called as the gain margin. 
+
+####### Phase Margin: 
+The value of the phase relative to -180°, at the same frequency at which the gain crosses 0dB (gain crossover frequency) is called as the phase margin. 
+The following figure shows the gain margin and the phase margin for a particular circuit. 
+
+![alt text] (https://github.com/khandelwalkshitij/microelectronic-circuits-17-18/blob/master/gm_pm.png)
+
+Usually, for any circuit, the gain crossover frequency is less than the phase crossover frequency. 
+Both these parameters can be calculated in LT-SPICE also. The following figure shows a sample graph from a cascade amplifier simulation done in class. 
+
+![alt text] (https://github.com/khandelwalkshitij/microelectronic-circuits-17-18/blob/master/gm_pm_sim.png)
+
+The cursor can be obtained by left clicking the ‘V(3)’ written at the heading of the graph. The cursor is shifted till the magnitude field in the box shows 0 dB (or a value closest). The phase margin s calculated at this value. The value of the phase is measured and the phase relative to -180° is calculated. 
+
+++++ e.g. In this case, the phase margin is 20.93 - (-180) = 200.93°. ++++
+
+Similarly, the value of the gain margin can be calculated by moving the cursor to a point where value of phase is -180°.  
