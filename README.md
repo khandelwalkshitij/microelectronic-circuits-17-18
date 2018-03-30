@@ -15,10 +15,10 @@ It is also suggested that you keep checking this repository for problems, resour
 
 Gain margin and phase margin are two parameters to assess the performance of a circuit. Depending on the values of both, we judge factors such as the stability of the circuit etc. 
 
-####### Gain Margin: 
+###### Gain Margin: 
 The value of the gain at the same frequency where the phase crosses -180° is called as the gain margin of the circuit. The frequency at which the phase crosses -180° is called  phase crossover frequency. Hence, the value of the gain at the phase crossover frequency is called as the gain margin. 
 
-####### Phase Margin: 
+###### Phase Margin: 
 The value of the phase relative to -180°, at the same frequency at which the gain crosses 0dB (gain crossover frequency) is called as the phase margin. 
 The following figure shows the gain margin and the phase margin for a particular circuit. 
 
