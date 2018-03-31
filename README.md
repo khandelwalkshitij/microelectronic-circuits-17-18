@@ -48,4 +48,4 @@ This directive includes the model and subcircuit definitions of the named file a
 If you're getting an error with this command, it may be because your library file isn't stored in the default path. An absolute path name may be entered for the filename. Otherwise LTspice looks first in the directory <LTspiceIV>\lib\cmp and then <LTspiceIV>\lib\sub and then in the directory that contains the calling netlist, where <LTspiceIV> is the directory containing the scad3.exe executable, typically installed as C:\Program Files\LTC\LTspiceIV.
 
 But if your file is in, say, C:\XYZFOLDER, your command must be ```.lib C:\XYZFOLDER\filename.lib```
-No file name extension is assumed. You must use ".lib myfile.lib" not ".lib myfile" if the file is called "myfile.lib"
+No file name extension is assumed. You must use `.lib myfile.lib` not `.lib myfile` if the file is called `myfile.lib`
